@@ -137,6 +137,10 @@ select {
     color: #ffffff;
 }
 
+a {
+  color: yellow
+}
+
 body {
   background: linear-gradient(to bottom, #6f019c, #f3c309, #009688);
   margin: 0;

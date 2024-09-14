@@ -5,6 +5,6 @@
 </script>
 
 <template>
-    <button @click="toggleDark()" class="px-4 py-2">{{ isDark ? "🌙" :
-        "🌞" }}</button>
+    <button @click="toggleDark()" class="px-4 py-2">{{ isDark ? "🌞" :
+        "🌙" }}</button>
 </template>

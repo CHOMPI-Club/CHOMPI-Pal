@@ -1,7 +1,8 @@
 <template>
     <div>
         <div style="color: black; marginBottom: 1em">
-            <small>Drag and drop or upload your samples, audition from within, and when you're set, click the big 'MAKE MY FILES' button to get
+            <small>Drag and drop or upload your samples, audition from within, and when you're set, click the big 'MAKE
+                MY FILES' button to get
                 a
                 zip of CHOMPI-friendly samples.</small>
         </div>
@@ -48,13 +49,6 @@
         </div>
         <button @click="processFiles" class="px-4 py-2 text-white bg-green-700 rounded dark:bg-slate-800">MAKE MY
             FILES</button>
-        <footer style=" color: white; padding-top: 50px">
-            <hr />
-            <em>
-                This is a community-maintained web app and is not affiliated with the CHOMPI team or product. But we
-                encourage you to buy one and make some jams.
-            </em>
-        </footer>
     </div>
 </template>
 

@@ -8,6 +8,7 @@
         <Header />
         <DarkMode />
         <WAVConverter />
+        <Footer/>
       </div>
     </div>
   </div>
@@ -17,11 +18,13 @@
 import WAVConverter from './components/WAVConverter.vue';
 import DarkMode from './components/DarkMode.vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   components: {
     WAVConverter,
-    Header
+    Header,
+    Footer
   },
 };
 </script>
