@@ -8,6 +8,7 @@
 #app {
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
+  font-size: 0.85em;
 }
 
 :root {
@@ -144,7 +145,6 @@ a {
 body {
   background: linear-gradient(to bottom, #6f019c, #f3c309, #009688);
   margin: 0;
-  overflow: hidden;
   min-width: 320px;
   min-height: 100vh;
 }
