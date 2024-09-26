@@ -2,9 +2,7 @@
     <footer style=" color: white; padding-top: 50px">
         <hr />
         <em>
-            chompi-pal is a community-maintained web app and is not affiliated with the CHOMPI team or product. But
-            we
-            encourage you to <a href="http://chompiclub.com" target="_blank">buy one and make some jams</a>.
+            CHOMPI•PAL is a community-powered web app. To find more awesome tools made by our CHOMPI Club pals, check out our <a href="https://discord.gg/WdMvKTRDPQ" target="_blank">DISCORD</a>.
         </em>
     </footer>
 </template>

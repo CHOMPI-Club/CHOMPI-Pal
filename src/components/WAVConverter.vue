@@ -10,14 +10,14 @@
         <div class="selection-container">
             <label>
                 Engine Selector:
-                <select v-model="selectedEngine">
+                <select v-model="selectedEngine" style="border: 2px solid blue; border-radius:100px">
                     <option value="jammi">JAMMI</option>
                     <option value="cubbi">CUBBI</option>
                 </select>
             </label>
             <label>
                 Bank Selector:
-                <select v-model="selectedBank">
+                <select v-model="selectedBank" class="select" style="border: 2px solid blue; border-radius:100px">
                     <option value="a">A - Purple</option>
                     <option value="b">B - Gold</option>
                     <option value="c">C - Teal Blue</option>
@@ -26,7 +26,7 @@
                 </select>
             </label>
         </div>
-        <div class="file-slots-container">
+        <div class="file-slots-container grid grid-cols-2 gap-2">
             <div class="file-slot" v-for="(slot, index) in fileSlots" :key="index" @dragover.prevent="handleDragOver"
                 @drop.prevent="handleFileDrop(index, $event)" @click="handleSlotClick(index)"
                 :style="{ width: slotWidth + 'px', height: slotHeight + 'px' }">
@@ -41,13 +41,18 @@
                 </div>
             </div>
         </div>
-        <div class="normalize">
-            <label>
-                Normalize <em>(-6db)</em>:
-                <input type="checkbox" v-model="normalize" />
+        <div class="flex items-center justify-center my-4">
+            <label class="checkbox-container flex items-center space-x-2">
+                <span>Normalize <em>(-6db)</em>:</span>
+                <input type="checkbox" v-model="normalize" class="hidden peer">
+                <div
+                    class="w-6 h-6 border-2 border-blue-500 bg-white rounded cursor-pointer flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-white transition-colors duration-300">
+                    <Checkmark v-if="normalize" style="width: 50%;"/>
+                </div>
             </label>
         </div>
-        <button @click="processFiles" class="px-4 py-2 text-white bg-green-700 rounded dark:bg-slate-800">MAKE MY
+
+        <button @click="processFiles" class="px-4 py-2 makeButton">MAKE MY
             FILES</button>
     </div>
 </template>
@@ -57,6 +62,7 @@ import { ref } from 'vue';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import audiobufferToWav from 'audiobuffer-to-wav';
+import Checkmark from '../assets/logos/checkmark.svg'
 
 export default {
     setup() {
@@ -277,6 +283,9 @@ export default {
             shortenFileName,
         };
     },
+    components: {
+        Checkmark
+    }
 };
 </script>
 

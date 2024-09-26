@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,900');
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,900");
 /* src/style.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 #app {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 900;
   font-size: 0.85em;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 :root {
@@ -21,20 +24,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+h1 {
+  -webkit-text-stroke-width: 0.05em;
+  -webkit-text-stroke-color: white;
 }
 
 small {
-  color: #ccc
+  color: white;
 }
 
 select {
-  background-color: #51e517;
-  color: black
+  background-color: white;
+  color: black;
+  border-color: #8f1fff;
+  width: 10em;
+  text-align-last: center;
+}
+
+input.custom-checkbox:checked + label {
+    @apply bg-blue-500 border-white;
+  }
+  
+  input.custom-checkbox:checked + label svg {
+    @apply block;
+  }
+
+  input.custom-checkbox:not(:checked) + label {
+    @apply bg-white border-blue-500;
+  }
+
+.makeButton {
+  border: 2px solid white;
+  background-color: #8f1fff;
+  color: white;
+  border-radius: 100px;
 }
 
 .file-slots-container {
@@ -46,43 +69,28 @@ select {
 }
 
 .file-slot {
-  width: 120px;
-  height: 80px;
-  margin-bottom: 10px;
-  border: 2px solid #ccc;
+  border: 0.2em solid white;
   border-radius: 10px;
-  /* Add rounded borders */
   box-sizing: border-box;
+  background: rgba(255, 109, 106) radial-gradient(rgba(255, 211, 206, 0.6), rgba(255, 179, 170, 0.65), rgba(255, 109, 106, 0.65));
+  filter: drop-shadow(4px 4px 4px rgba(255, 109, 106, 1));
+  max-height: 6em;
+  min-height: 6em;
+  max-width: 6em;
 }
 
 .slot-number {
-  margin-top: 5px;
-  font-size: 12px;
-  color: #888;
-  /* Grey color */
-  opacity: 0.8;
-  /* Adjust the opacity as needed (0 to 1) */
-}
-
-/* Responsive styles for smaller screens */
-@media only screen and (max-width: 600px) {
-  .file-slot {
-    width: calc(33.33% - 10px);
-  }
-}
-
-/* Responsive styles for larger screens */
-@media only screen and (min-width: 1200px) {
-  .file-slot {
-    flex: 0 0 calc(7.14% - 10px);
-  }
+  font-size: 0.5em;
+  color: white;
+  opacity: 1;
 }
 
 .slot-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  margin: 1em;
+  font-size: 0.5em;
 }
 
 .play-button {
@@ -93,7 +101,7 @@ select {
 
 .custom-file-label {
   padding: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   background-color: #f8f8f8;
   text-align: center;
@@ -116,105 +124,45 @@ select {
 }
 
 #app {
-  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
-  text-align: center;
   color: #2c3e50;
   padding-top: 0;
 }
 
 .dark #app {
-    color: #e2e8ee;
+  color: #e2e8ee;
 }
 
 .dark label {
-    color: #51e517;
+  color: #51e517;
 }
 
 .slot-number {
-  color: #131313;
+  color: #fff;
 }
 
 .dark .slot-number {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 a {
-  color: yellow
+  color: #8f1fff;
 }
 
 body {
-  background: linear-gradient(to bottom, #6f019c, #f3c309, #009688);
+  background: linear-gradient(0.6turn, #FF9F8D, #FF8E81, #FF6D6A);
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
 }
 
 .dark body {
-  background: linear-gradient(to bottom, #18131a, #383838f6, #000000);
+  background: #000;
 }
 
 .header-text {
-  color: black
+  color: black;
 }
 
 .dark .header-text {
-  color: white
-}
-
-#crt:before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(to bottom,
-      rgba(18, 16, 16, 0) 50%,
-      rgba(0, 0, 0, 0.25) 50%);
-  background-size: 100% 2px;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.3;
-}
-
-@keyframes textShadow {
-  0% {
-    text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
-  }
-
-  5% {
-    text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
-  }
-
-  /** etc */
-}
-
-.scanline {
-  width: 100%;
-  height: 4px;
-  /* Adjust the height of the scanlines as needed */
-  z-index: 8;
-  background: linear-gradient(0deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(255, 255, 255, 0.2) 10%,
-      rgba(0, 0, 0, 0.1) 100%);
-  opacity: 0.5;
-  position: absolute;
-  bottom: 100%;
-  animation: scanline 5s linear infinite;
-}
-
-@keyframes scanline {
-  0% {
-    bottom: 100%;
-  }
-
-  80% {
-    bottom: 100%;
-  }
-
-  100% {
-    bottom: 0%;
-  }
+  color: white;
 }

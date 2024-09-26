@@ -1,16 +1,10 @@
 <!-- App.vue -->
 <template>
   <div id="app">
-    <div id="monitor">
-      <div id="crt" class="off" onClick="handleClick(event)">
-        <!-- slowly moving scanline -->
-        <div class="scanline"></div>
-        <Header />
-        <DarkMode />
-        <WAVConverter />
-        <Footer/>
-      </div>
-    </div>
+    <Header />
+    <DarkMode />
+    <WAVConverter />
+    <Footer />
   </div>
 </template>
 

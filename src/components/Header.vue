@@ -1,17 +1,23 @@
 <template>
-    <div class="flex flex-row items-center justify-between w-full p-4 relative">
-        <h1 class="header-text text-3xl font-bold flex-grow text-center mx-auto">chompi-pal</h1>
+    <div class="flex flex-col items-center justify-between w-full p-4 relative">
+        <Logo/>
+        <h1 class="header-text text-3xl font-bold flex-grow text-center mx-auto">CHOMPI • PAL</h1>
         <DarkMode class="absolute right-0" />
     </div>
 </template>
 <script>
+
 import DarkMode from './DarkMode.vue'
-import Logo from '../assets/ChompiLogo.png'
+import LogoDark from '../assets/logos/CHOMPI_FaceLogo_White.svg'
+import LogoPeach from '../assets/logos/CHOMPI_FaceLogo_Peach.svg'
+import Logo from '../assets/logos/CHOMPI_FaceLogo_BlackWht.svg'
 
 export default {
     components: {
         DarkMode,
-        Logo
+        Logo,
+        LogoDark,
+        LogoPeach
     },
 };
 </script>
