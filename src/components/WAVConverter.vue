@@ -6,14 +6,14 @@
         </div>
         <hr />
         <div class="selection-container">
-            <label>
+            <label class="dropDownLabels">
                 Engine Selector:
                 <select v-model="selectedEngine" style="border: 2px solid blue; border-radius:100px">
                     <option value="jammi">JAMMI</option>
                     <option value="cubbi">CUBBI</option>
                 </select>
             </label>
-            <label>
+            <label class="dropDownLabels">
                 Bank Selector:
                 <select v-model="selectedBank" class="select font-black"
                     style="border: 2px solid blue; border-radius:100px">
@@ -43,7 +43,7 @@
         </div>
         <div class="flex items-center justify-center my-4">
             <label class="checkbox-container flex items-center space-x-2">
-                <span>Normalize <em>(-6db)</em>:</span>
+                <span class="dropDownLabels">Normalize (-6db):</span>
                 <input type="checkbox" v-model="normalize" class="hidden peer">
                 <div
                     class="w-6 h-6 border-2 border-blue-500 bg-white rounded cursor-pointer flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-white transition-colors duration-300">

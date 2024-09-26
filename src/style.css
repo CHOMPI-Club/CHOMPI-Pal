@@ -12,6 +12,13 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  letter-spacing: 100;
+  color: #2c3e50;
+  padding-top: 0;
+}
+
+.dark #app {
+  color: #FF6D6A;
 }
 
 :root {
@@ -43,6 +50,14 @@ select {
   text-align-last: center;
 }
 
+.dropDownLabels {
+  color: black
+}
+
+.dark .dropDownLabels {
+  color: #FF6D6A
+}
+
 input.custom-checkbox:checked + label {
     @apply bg-blue-500 border-white;
   }
@@ -68,6 +83,7 @@ input.custom-checkbox:checked + label {
   gap: 10px;
   overflow-x: auto;
   justify-content: center;
+  padding-bottom: 1em;
 }
 
 .file-slot {
@@ -81,6 +97,10 @@ input.custom-checkbox:checked + label {
   max-width: 6em;
 }
 
+.dark .file-slot {
+  background: black;
+}
+
 .file-slot-full {
   background: rgba(187, 107, 246) radial-gradient(rgba(187, 107, 246, 0.4), rgba(143, 31, 255, 0.95));
 }
@@ -90,19 +110,22 @@ input.custom-checkbox:checked + label {
   letter-spacing: .05rem;
 }
 
+.dark .slot-label {
+  color: #2CCCD3;
+}
+
 .slot-number {
   padding-top: 1em;
   font-size: 0.5em;
   color: white;
   opacity: 1;
-  letter-spacing: 0px;
+  letter-spacing: 0em;
 }
 
 .slot-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   margin: 1em;
   font-size: 0.5em;
 }
@@ -113,19 +136,7 @@ input.custom-checkbox:checked + label {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.custom-file-label {
-  padding: 5px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  text-align: center;
-}
-
-.dark .custom-file-label {
-  border: 1px solid #020202;
-  background-color: #100c0c;
+  color: #fff
 }
 
 .selection-container {
@@ -139,13 +150,8 @@ input.custom-checkbox:checked + label {
   padding: 10px;
 }
 
-#app {
-  color: #2c3e50;
-  padding-top: 0;
-}
-
-.dark #app {
-  color: #e2e8ee;
+.dark .normalize {
+  color: #FF6D6A
 }
 
 .dark label {
@@ -162,6 +168,10 @@ input.custom-checkbox:checked + label {
 
 a {
   color: #8f1fff;
+}
+
+.dark a {
+  color: #2CCCD3;
 }
 
 body {
@@ -184,7 +194,8 @@ max-width: 100%
 }
 
 .dark .header-text {
-  color: white;
+  color: black;
+  -webkit-text-stroke-color: pink;
 }
 
 /* FONTS: */

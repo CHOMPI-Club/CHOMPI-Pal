@@ -1,24 +1,24 @@
 <template>
     <div class="flex flex-col items-center justify-between w-full p-4 relative">
-        <Logo />
-        <h1 class="header-text text-3xl font-bold flex-grow text-center mx-auto font-ultra">CHOMPI • PAL</h1>
+        <!-- Conditionally render dark and light logos -->
+        <LogoDark v-if="isDark" />
+        <Logo v-else />
+
+        <!-- Header text -->
+        <h1 class="header-text text-4xl font-bold flex-grow text-center mx-auto font-ultra">CHOMPI • PAL</h1>
+
+        <!-- Dark Mode toggle button -->
         <DarkMode class="absolute right-0" />
     </div>
 </template>
-<script>
 
-import DarkMode from './DarkMode.vue'
-import LogoDark from '../assets/logos/CHOMPI_FaceLogo_White.svg'
-import LogoPeach from '../assets/logos/CHOMPI_FaceLogo_Peach.svg'
-import Logo from '../assets/logos/CHOMPI_FaceLogo_BlackWht.svg'
-import Checkmark from '../assets/logos/checkmark.svg'
+<script setup>
+// Import components and SVGs
+import DarkMode from './DarkMode.vue';
+import LogoDark from '../assets/logos/CHOMPI_FaceLogo_White.svg';
+import Logo from '../assets/logos/CHOMPI_FaceLogo_BlackWht.svg';
+import { useDark } from "@vueuse/core";
 
-export default {
-    components: {
-        DarkMode,
-        Logo,
-        LogoDark,
-        LogoPeach
-    },
-};
+// Declare and track the dark mode state
+const isDark = useDark();
 </script>
