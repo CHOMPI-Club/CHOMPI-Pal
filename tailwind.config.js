@@ -9,7 +9,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Hoss Round", "sans-serif"], // Override Tailwind's default sans font-family
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        medium: 500,
+        bold: 700,
+        heavy: 800,
+        black: 900,
+        ultra: 950, // Optional custom weight for Ultra
       },
     },
   },

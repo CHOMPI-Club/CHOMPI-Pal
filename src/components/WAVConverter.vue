@@ -1,10 +1,8 @@
 <template>
     <div>
-        <div style="color: black; marginBottom: 1em">
-            <small>Drag and drop or upload your samples, audition from within, and when you're set, click the big 'MAKE
-                MY FILES' button to get
-                a
-                zip of CHOMPI-friendly samples.</small>
+        <div style="color: black; margin-bottom: 1em" class="font-bold">
+            <small>Drag and drop or upload your samples, audition from within, and when you're set:
+                click the "MAKE MY FILES" button to get a zip of CHOMPI-friendly samples.</small>
         </div>
         <hr />
         <div class="selection-container">
@@ -17,7 +15,8 @@
             </label>
             <label>
                 Bank Selector:
-                <select v-model="selectedBank" class="select" style="border: 2px solid blue; border-radius:100px">
+                <select v-model="selectedBank" class="select font-black"
+                    style="border: 2px solid blue; border-radius:100px">
                     <option value="a">A - Purple</option>
                     <option value="b">B - Gold</option>
                     <option value="c">C - Teal Blue</option>
@@ -27,19 +26,20 @@
             </label>
         </div>
         <div class="file-slots-container grid grid-cols-2 gap-2">
-            <div class="file-slot" v-for="(slot, index) in fileSlots" :key="index" @dragover.prevent="handleDragOver"
-                @drop.prevent="handleFileDrop(index, $event)" @click="handleSlotClick(index)"
-                :style="{ width: slotWidth + 'px', height: slotHeight + 'px' }">
+            <div class="file-slot" :class="{ 'file-slot-full': slot.file }" v-for="(slot, index) in fileSlots"
+                :key="index" @dragover.prevent="handleDragOver" @drop.prevent="handleFileDrop(index, $event)"
+                @click="handleSlotClick(index)" :style="{ width: slotWidth + 'px', height: slotHeight + 'px' }">
                 <div class="slot-content">
                     <button v-if="slot.audioBuffer" @click.stop="playPreview(index)" class="play-button">
                         ▶
                     </button>
                     <input type="file" @change="handleFileSelect(index, $event)" accept=".wav" style="display: none" />
-                    <label v-if="!slot.audioBuffer && !slot.file">{{ 'SELECT OR DRAG A FILE' }}</label>
+                    <label v-if="!slot.audioBuffer && !slot.file" class="font-black slot-label">{{ 'SELECT OR DRAG A FILE' }}</label>
                     <label v-if="!slot.audioBuffer && slot.file">{{ shortenFileName(slot.file.name) }}</label>
-                    <div class="slot-number">{{ selectedEngine + '_' + selectedBank + (index + 1) }}</div>
+                    <div class="slot-number font-black">{{ selectedEngine + '_' + selectedBank + (index + 1) }}</div>
                 </div>
             </div>
+
         </div>
         <div class="flex items-center justify-center my-4">
             <label class="checkbox-container flex items-center space-x-2">
@@ -47,13 +47,11 @@
                 <input type="checkbox" v-model="normalize" class="hidden peer">
                 <div
                     class="w-6 h-6 border-2 border-blue-500 bg-white rounded cursor-pointer flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-white transition-colors duration-300">
-                    <Checkmark v-if="normalize" style="width: 50%;"/>
+                    <Checkmark v-if="normalize" style="width: 50%;" />
                 </div>
             </label>
         </div>
-
-        <button @click="processFiles" class="px-4 py-2 makeButton">MAKE MY
-            FILES</button>
+        <button @click="processFiles" class="px-4 py-2 makeButton font-heavy">MAKE MY FILES</button>
     </div>
 </template>
 

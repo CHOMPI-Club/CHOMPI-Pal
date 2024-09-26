@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 #app {
-  font-family: "Nunito", sans-serif;
+  font-family: "Hoss Round", sans-serif;
   font-weight: 900;
   font-size: 0.85em;
   max-width: 1280px;
@@ -31,6 +31,8 @@ h1 {
 
 small {
   color: white;
+  font-size: 1em;
+  text-wrap: balance;
 }
 
 select {
@@ -79,21 +81,35 @@ input.custom-checkbox:checked + label {
   max-width: 6em;
 }
 
+.file-slot-full {
+  background: rgba(187, 107, 246) radial-gradient(rgba(187, 107, 246, 0.4), rgba(143, 31, 255, 0.95));
+}
+
+.slot-label {
+  font-size: 1em;
+  letter-spacing: .05rem;
+}
+
 .slot-number {
+  padding-top: 1em;
   font-size: 0.5em;
   color: white;
   opacity: 1;
+  letter-spacing: 0px;
 }
 
 .slot-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   margin: 1em;
   font-size: 0.5em;
 }
 
 .play-button {
+  padding-top: 0.75em;
+  font-size: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,6 +171,10 @@ body {
   min-height: 100vh;
 }
 
+svg {
+max-width: 100%
+}
+
 .dark body {
   background: #000;
 }
@@ -165,4 +185,126 @@ body {
 
 .dark .header-text {
   color: white;
+}
+
+/* FONTS: */
+
+/* Regular */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Regular Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Regular Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Heavy */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Heavy Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Heavy Italic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Black */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Black Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Ultra */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Ultra.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+}
+
+/* Ultra Italic */
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/src/assets/fonts/Hoss Round/Hoss Round Ultra Italic.otf') format('opentype');
+  font-weight: 950;
+  font-style: italic;
 }
