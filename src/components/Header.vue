@@ -15,7 +15,7 @@
 <script setup>
 // Import components and SVGs
 import DarkMode from './DarkMode.vue';
-import LogoDark from '../assets/logos/CHOMPI_FaceLogo_White.svg';
+import LogoDark from '../assets/logos/CHOMPI_FaceLogo_Peach.svg';
 import Logo from '../assets/logos/CHOMPI_FaceLogo_BlackWht.svg';
 import { useDark } from "@vueuse/core";
 

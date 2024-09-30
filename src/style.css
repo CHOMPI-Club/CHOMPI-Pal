@@ -203,6 +203,10 @@ max-width: 100%
   -webkit-text-stroke-color: pink;
 }
 
+.divider {
+  margin: 2em;
+}
+
 /* FONTS: */
 
 /* Regular */

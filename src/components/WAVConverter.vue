@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div style="color: black; margin-bottom: 1em" class="font-bold">
+        <div style="color: black" class="font-bold">
             <small>Drag and drop or upload your samples, audition from within, and when you're set:
                 click the "MAKE MY FILES" button to get a zip of CHOMPI-friendly samples.</small>
         </div>
-        <hr />
+        <hr class="divider" />
         <div class="selection-container">
             <label class="dropDownLabels">
                 Engine Selector:
@@ -75,13 +75,13 @@ export default {
         async function normalizeAudioBuffer(audioBuffer) {
             const targetDb = -6;
 
-            // Calculate the current peak amplitude of the audio buffer
+            // Peak amplitude of the audio buffer
             const currentDb = calculatePeakAmplitudeDb(audioBuffer);
 
-            // Calculate the gain needed to achieve the target dB level
+            // Gain diff from target dB
             const gain = calculateGain(targetDb, currentDb);
-
-            // Apply the gain to normalize the audio buffer with the target sample rate of 48000 Hz
+            
+            // Apply Transformation
             const targetSampleRate = 48000;
             const normalizedBuffer = applyGain(audioBuffer, gain, targetSampleRate);
 
@@ -101,8 +101,6 @@ export default {
                     }
                 }
             }
-
-            // Convert the peak amplitude to dB
             return 20 * Math.log10(peakAmplitude);
         }
 
