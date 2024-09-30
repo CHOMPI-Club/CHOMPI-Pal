@@ -12,3 +12,4 @@ jobs:
         username: 'hasis'
         reponame: 'chompi-pal'
         token: ${{ secrets.GITHUB_TOKEN }}
+        useyarn: true
