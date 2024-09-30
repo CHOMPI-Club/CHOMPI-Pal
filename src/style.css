@@ -99,10 +99,15 @@ input.custom-checkbox:checked + label {
 
 .dark .file-slot {
   background: black;
+  filter: drop-shadow(1px 1px 1px rgba(255, 109, 106, 1));
 }
 
 .file-slot-full {
   background: rgba(187, 107, 246) radial-gradient(rgba(187, 107, 246, 0.4), rgba(143, 31, 255, 0.95));
+}
+
+.dark .file-slot-full {
+      background: rgba(187, 107, 246) radial-gradient(rgba(187, 107, 246, 0.4), rgba(143, 31, 255, 0.95));
 }
 
 .slot-label {
