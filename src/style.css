@@ -36,6 +36,11 @@ h1 {
   -webkit-text-stroke-color: white;
 }
 
+.ChompiLogo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 small {
   color: white;
   font-size: 1em;

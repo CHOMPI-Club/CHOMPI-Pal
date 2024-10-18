@@ -1,8 +1,11 @@
 <template>
     <div class="flex flex-col items-center justify-between w-full p-4 relative">
         <!-- Conditionally render dark and light logos -->
-        <LogoDark v-if="isDark" />
-        <Logo v-else />
+        <div class="ChompiLogo">
+            <LogoDark v-if="isDark" />
+            <Logo v-else />
+
+        </div>
 
         <!-- Header text -->
         <h1 class="header-text text-4xl font-bold flex-grow text-center mx-auto font-ultra">CHOMPI • PAL</h1>
