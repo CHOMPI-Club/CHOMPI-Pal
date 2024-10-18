@@ -74,14 +74,8 @@ export default {
 
         async function normalizeAudioBuffer(audioBuffer) {
             const targetDb = -6;
-
-            // Peak amplitude of the audio buffer
             const currentDb = calculatePeakAmplitudeDb(audioBuffer);
-
-            // Gain diff from target dB
             const gain = calculateGain(targetDb, currentDb);
-            
-            // Apply Transformation
             const targetSampleRate = 48000;
             const normalizedBuffer = applyGain(audioBuffer, gain, targetSampleRate);
 
@@ -168,6 +162,27 @@ export default {
             }
         }
 
+
+        async function createDoubleSpeedBuffer(audioBuffer) {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+            const offlineContext = new OfflineAudioContext(
+                audioBuffer.numberOfChannels,
+                audioBuffer.duration * audioBuffer.sampleRate,
+                audioBuffer.sampleRate
+            );
+
+            const source = offlineContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.playbackRate.value = 2;
+            source.connect(offlineContext.destination);
+            source.start(0);
+
+            const renderedBuffer = await offlineContext.startRendering();
+            return renderedBuffer;
+        }
+
+
         async function processFiles() {
             const zip = new JSZip();
 
@@ -179,10 +194,11 @@ export default {
                     try {
                         const normalizedAudioBuffer = normalize.value ? await normalizeAudioBuffer(audioBuffer) : audioBuffer;
                         const wavBuffer = await convertAudioBufferToWav(normalizedAudioBuffer);
-
-                        console.log(`Size of ${selectedEngine.value}_${selectedBank.value}${i + 1}.wav: ${wavBuffer.length} bytes`);
-
                         zip.file(`${selectedEngine.value}_${selectedBank.value}${i + 1}.wav`, wavBuffer);
+
+                        const doubleSpeedBuffer = await createDoubleSpeedBuffer(normalizedAudioBuffer); 
+                        const doubleWavBuffer = await convertAudioBufferToWav(doubleSpeedBuffer);
+                        zip.file(`${selectedEngine.value}_${selectedBank.value}${i + 1}_double.wav`, doubleWavBuffer);
                     } catch (error) {
                         console.error('Error processing file:', error);
                     }
@@ -194,9 +210,10 @@ export default {
             zip.generateAsync({ type: 'blob' })
                 .then((blob) => {
                     console.log('Zip file size:', blob.size, 'bytes');
-                    saveAs(blob, 'processed_files.zip');
+                    saveAs(blob, 'yum_chompi_samples.zip');
                 });
         }
+
 
         function readFile(file) {
             return new Promise((resolve, reject) => {
